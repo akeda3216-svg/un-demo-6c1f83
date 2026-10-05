@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>uni studio 芦屋｜足裏から繋がるマシンピラティス（ホームページ見本）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Shippori+Mincho:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--sand:#efe6da;--sand2:#e5d9c8;--clay:#c06b4c;--clay2:#a8573a;--umber:#34281f;--mute:#7b6c5f;--cream:#fbf6ee;--ease:cubic-bezier(.2,.8,.2,1);--demo:36px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{background:var(--sand);color:var(--umber);font-family:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;font-weight:500;line-height:1.9;overflow-x:hidden}
+body.lock{overflow:hidden;height:100svh}
+a{color:inherit}button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+.mi{font-family:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif}
+.en{font-family:"Cormorant Garamond",serif;letter-spacing:.2em}
+
+/* ===== オープニング ===== */
+#intro{position:fixed;inset:0;z-index:200;background:var(--clay);display:grid;place-items:center;overflow:hidden;
+  transition:transform 1.15s cubic-bezier(.77,0,.18,1),border-radius 1.15s cubic-bezier(.77,0,.18,1);border-radius:0 0 0 0}
+#intro.out{transform:translateY(-104%);border-radius:0 0 50% 50% / 0 0 14% 14%}
+.ist{position:relative;width:min(70vw,260px);height:min(46svh,330px)}
+.stone{position:absolute;left:50%;bottom:calc(var(--b) * 1px);width:calc(var(--w) * 1px);height:calc(var(--h) * 1px);margin-left:calc(var(--w) * -.5px + var(--dx) * 1px);border-radius:50%;background:var(--cream);opacity:0;
+  animation:drop .9s var(--ease) both;animation-delay:calc(.25s + var(--i) * .17s)}
+.stone.foot{border-radius:46% 54% 50% 50% / 60% 60% 40% 40%;background:#f6ddc9}
+@keyframes drop{0%{opacity:0;transform:translateY(-120px) scale(.92)}55%{opacity:1;transform:translateY(7px) scale(1)}100%{opacity:1;transform:none}}
+.iw{position:absolute;left:50%;translate:-50% 0;width:max-content;white-space:nowrap;bottom:-64px;text-align:center;color:var(--cream);font-size:clamp(20px,5.4vw,28px);letter-spacing:.2em;opacity:0;animation:fadeup .9s var(--ease) 1.75s both}
+.ib{position:absolute;left:0;right:0;top:min(11svh,70px);text-align:center;color:rgba(251,246,238,.82);font-size:15px;opacity:0;animation:fadeup .9s var(--ease) .2s both}
+@keyframes fadeup{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.skip{position:absolute;right:16px;bottom:max(16px,env(safe-area-inset-bottom));color:rgba(251,246,238,.85);font-size:12px;letter-spacing:.14em;border-bottom:1px solid rgba(251,246,238,.6);padding:6px 2px;z-index:2}
+
+/* ===== メイン ===== */
+.demo{background:var(--umber);color:#efe6da;font-size:11.5px;line-height:1.55;text-align:center;padding:7px 12px;min-height:var(--demo)}
+.hero{position:relative;min-height:calc(100svh - var(--demo));display:grid;grid-template-columns:1fr;grid-template-rows:auto 1fr auto;padding:14px 18px 16px;gap:6px;overflow:hidden;
+  background:radial-gradient(90% 60% at 80% 35%,#f4ebdf 0,transparent 70%),var(--sand)}
+.top{display:flex;justify-content:space-between;align-items:flex-start}
+.logo{font-size:24px;line-height:1.1;letter-spacing:.14em;font-weight:600}
+.logo small{display:block;font-family:"Zen Kaku Gothic New",sans-serif;font-size:10px;letter-spacing:.26em;color:var(--mute);margin-top:3px}
+.st{font-size:11px;letter-spacing:.12em;color:var(--mute);text-align:right;line-height:1.7}
+.mid{display:grid;grid-template-columns:1fr;align-content:center;gap:8px;min-height:0}
+.k{font-size:11px;letter-spacing:.3em;color:var(--clay2)}
+h1{font-family:"Shippori Mincho",serif;font-weight:700;font-size:clamp(27px,8.2vw,56px);line-height:1.45;letter-spacing:.06em}
+h1 em{font-style:normal;color:var(--clay2);background:linear-gradient(transparent 70%,rgba(192,107,76,.2) 70%)}
+.lead{font-size:13.5px;max-width:30em;color:#5b4d41;display:none}
+.stack{position:relative;margin:6px auto 0;width:min(100%,360px);display:flex;flex-direction:column-reverse;align-items:center}
+.sk{--u:clamp(54px,14.5vw,86px);position:relative;height:clamp(36px,6.4svh,58px);margin-top:calc(clamp(36px,6.4svh,58px) * -.1);border-radius:999px;background:var(--cream);color:var(--clay2);display:grid;place-items:center;
+  font-family:"Shippori Mincho",serif;font-weight:700;font-size:clamp(13px,3.6vw,17px);letter-spacing:.2em;box-shadow:0 10px 18px -10px rgba(52,40,31,.35);
+  transition:background .45s,color .45s,transform .6s var(--ease),box-shadow .45s;animation:wob var(--t,6s) ease-in-out infinite alternate}
+.sk:nth-child(1){width:calc(var(--u)*3.9);border-radius:46% 46% 50% 50%/70% 70% 40% 40%}
+.sk:nth-child(2){width:calc(var(--u)*3.3);--t:5.2s}
+.sk:nth-child(3){width:calc(var(--u)*2.8);--t:6.4s}
+.sk:nth-child(4){width:calc(var(--u)*2.3);--t:5.6s}
+.sk:nth-child(5){width:calc(var(--u)*1.85);--t:6.8s}
+@keyframes wob{from{translate:-3px 0}to{translate:4px 0}}
+.sk[aria-pressed="true"]{background:var(--clay);color:var(--cream);transform:translateY(-6px) scale(1.04);box-shadow:0 18px 26px -10px rgba(168,87,58,.55)}
+.sk:focus-visible,.cta:focus-visible,.skip:focus-visible{outline:3px solid var(--umber);outline-offset:3px}
+.cap{min-height:5.4em;font-size:13.5px;line-height:1.8;color:#4b3e33;text-align:center;max-width:26em;margin:6px auto 0}
+.cap b{display:block;font-family:"Shippori Mincho",serif;font-size:16px;color:var(--clay2);margin-bottom:1px}
+.bot{display:grid;gap:8px;justify-items:center}
+.chips{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+.chips .pc{display:none}@media(min-width:900px){.chips .pc{display:inline}}
+.chips span{font-size:11.5px;border:1px solid rgba(52,40,31,.35);border-radius:99px;padding:2px 11px;background:rgba(251,246,238,.6)}
+.cta{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;max-width:440px;min-height:52px;background:var(--umber);color:var(--cream);text-decoration:none;font-weight:700;letter-spacing:.12em;border-radius:2px;font-size:15px}
+.cta::after{content:"";width:26px;height:1px;background:var(--cream);transition:width .3s}
+.cta:hover::after{width:40px}
+.sub{font-size:10.5px;color:var(--mute);text-align:center;letter-spacing:.06em}
+@media(min-width:900px){
+  .hero{grid-template-columns:1.05fr .95fr;grid-template-rows:auto 1fr;grid-template-areas:"top top" "mid stack";padding:28px 64px 28px;gap:20px 40px}
+  .top{grid-area:top}.mid{grid-area:mid;align-content:center;justify-items:start;gap:14px}
+  .lead{display:block}
+  h1{font-size:clamp(40px,4.4vw,64px)}
+  .stack-wrap{grid-area:stack;display:grid;align-content:center;justify-items:center}
+  .stack{width:min(100%,460px)}
+  .sk{--u:clamp(70px,6.4vw,100px);height:clamp(50px,8svh,70px);font-size:19px}
+  .cap{text-align:left;margin:8px 0 0;max-width:30em}
+  .bot{justify-items:start;margin-top:6px}.chips{justify-content:flex-start}.cta{max-width:380px}.sub{text-align:left}
+}
+
+/* ===== 下層 ===== */
+.after{background:var(--cream)}
+.sec{max-width:980px;margin:0 auto;padding:88px 22px}
+@media(min-width:900px){.sec{padding:120px 40px}}
+.kk{display:block;font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:600;font-size:19px;letter-spacing:.14em;color:var(--clay2);margin-bottom:4px}
+h2{font-family:"Shippori Mincho",serif;font-weight:700;font-size:clamp(24px,4.4vw,42px);line-height:1.5;letter-spacing:.05em;margin-bottom:16px}
+h2 em{font-style:normal;background:linear-gradient(transparent 68%,rgba(192,107,76,.22) 68%)}
+.ld{max-width:36em;color:#5b4d41}
+.q{margin:22px 0 0;border-left:3px solid var(--clay);padding:6px 0 6px 16px;font-family:"Shippori Mincho",serif;font-size:clamp(17px,2.6vw,22px);line-height:1.9}
+.nt{font-size:12px;color:var(--mute);line-height:1.8;margin-top:14px}
+.tl{display:grid;gap:0;margin-top:14px;border-top:1px solid rgba(52,40,31,.25)}
+.tl div{display:grid;grid-template-columns:7em 1fr;gap:10px;padding:14px 0;border-bottom:1px solid rgba(52,40,31,.25);font-size:14.5px}
+.tl b{font-family:"Shippori Mincho",serif;color:var(--clay2)}
+.hours{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;margin-top:14px}
+.hours div{background:var(--sand);border-radius:6px;padding:10px 12px;font-size:14px}
+.hours b{display:block;font-family:"Cormorant Garamond",serif;font-size:18px;color:var(--clay2)}
+.tbd{margin-top:16px;border:1px dashed var(--clay);border-radius:8px;padding:14px 16px;background:#fff9f0;font-size:14px}
+.ig{display:flex;justify-content:center;margin-top:12px}
+.ig iframe{width:100%;max-width:420px;height:560px;border:1px solid rgba(52,40,31,.18);background:#fff}
+.band{background:var(--clay);color:var(--cream);padding:64px 22px;text-align:center}
+.band p{font-family:"Shippori Mincho",serif;font-size:clamp(20px,4vw,30px);line-height:1.8;font-weight:700}
+.band a{display:inline-block;margin-top:22px;background:var(--cream);color:var(--clay2);text-decoration:none;padding:15px 36px;font-weight:700;letter-spacing:.12em;border-radius:2px}
+footer{background:var(--umber);color:#cdbfae;font-size:11.5px;line-height:1.9;padding:26px 22px 40px;text-align:center}
+footer a{color:#efe6da}
+.js .fd{opacity:0;transform:translateY(22px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.js .fd.in{opacity:1;transform:none}
+/* 登場 */
+.js .hero .top,.js .hero .k,.js .hero h1,.js .hero .lead,.js .hero .stack,.js .hero .cap,.js .hero .bot{opacity:0;transform:translateY(16px)}
+.ready .hero .top,.ready .hero .k,.ready .hero h1,.ready .hero .lead,.ready .hero .stack,.ready .hero .cap,.ready .hero .bot{opacity:1;transform:none;transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.ready .hero .k{transition-delay:.15s}.ready .hero h1{transition-delay:.25s}.ready .hero .lead{transition-delay:.35s}.ready .hero .stack{transition-delay:.4s}.ready .hero .cap{transition-delay:.6s}.ready .hero .bot{transition-delay:.7s}
+@media(prefers-reduced-motion:reduce){#intro{display:none}.sk{animation:none}.js .fd,.js .hero *{opacity:1!important;transform:none!important;transition:none!important}}
+</style>
+</head>
+<body class="lock">
+
+<div id="intro" role="presentation">
+  <p class="ib en">uni studio</p>
+  <div class="ist" aria-hidden="true">
+    <span class="stone foot" style="--w:170;--h:42;--b:0;--dx:0;--i:0"></span>
+    <span class="stone" style="--w:132;--h:38;--b:34;--dx:5;--i:1"></span>
+    <span class="stone" style="--w:112;--h:34;--b:66;--dx:-6;--i:2"></span>
+    <span class="stone" style="--w:92;--h:32;--b:96;--dx:4;--i:3"></span>
+    <span class="stone" style="--w:76;--h:28;--b:124;--dx:-3;--i:4"></span>
+    <span class="stone" style="--w:58;--h:26;--b:150;--dx:3;--i:5"></span>
+    <span class="stone" style="--w:42;--h:22;--b:174;--dx:-2;--i:6"></span>
+    <p class="iw mi">足裏から、つながる。</p>
+  </div>
+  <button class="skip" id="skip" type="button">スキップ</button>
+</div>
+
+<div class="demo">これは uni studio 様向けのデモ（非公開の見本）です。お店の公開情報をもとにしています。写真は使っていません。</div>
+
+<header class="hero" id="hero">
+  <div class="top"><div class="logo en">uni studio<small>ASHIYA · MACHINE PILATES</small></div><div class="st">JR芦屋駅 徒歩10分<br>1組貸切</div></div>
+  <div class="mid">
+    <p class="k">芦屋のマシンピラティス</p>
+    <h1>足裏から、<br><em>つながる</em>身体へ。</h1>
+    <p class="lead">身体の土台は、足裏。骨の積み重ねを、足裏から順にたどり、余計な力みを手放していくレッスンです。1組貸切のスタジオで、ご自身の身体に集中できます。</p>
+  </div>
+  <div class="stack-wrap">
+    <div class="stack" id="stack" role="group" aria-label="足裏から順に、身体のつながりを見る">
+      <button class="sk" type="button" aria-pressed="false" data-i="0">足裏</button>
+      <button class="sk" type="button" aria-pressed="false" data-i="1">脚</button>
+      <button class="sk" type="button" aria-pressed="false" data-i="2">骨盤</button>
+      <button class="sk" type="button" aria-pressed="false" data-i="3">背骨</button>
+      <button class="sk" type="button" aria-pressed="false" data-i="4">肩・首</button>
+    </div>
+    <p class="cap" id="cap" aria-live="polite"><b>足裏</b>身体の土台は、足裏。まず、足裏で立つ感覚から始めます。</p>
+  </div>
+  <div class="bot">
+    <div class="chips"><span>1組貸切</span><span>contrology リフォーマー</span><span class="pc">JR芦屋駅 徒歩10分</span></div>
+    <a class="cta" href="https://unistudio-pilates.stores.jp/reserve/ashiya" target="_blank" rel="noopener">空き状況を見て、予約する</a>
+    <p class="sub">月火木金 9:30–16:30／水 9:30–12:00／土日定休</p>
+  </div>
+</header>
+
+<div class="after">
+<section><div class="sec">
+  <span class="kk fd">Concept</span>
+  <h2 class="fd">骨は、積み重なって<br>できています。<em>土台は、足裏。</em></h2>
+  <p class="ld fd">人の身体は、骨の積み重ねでできています。その土台が足裏です。足裏から身体のつながりを感じていくと、不要な力みが抜けて、使われていなかった筋肉が目覚めていく——お店では、このように考えて、レッスンをされています。</p>
+  <p class="q fd">10回で、違いを感じ。<br>20回で、見た目が変わり。<br>30回で、身体のすべてが変わる。<br><span style="font-size:.7em;color:var(--mute)">— ジョセフ・ピラティス（予約ページより）</span></p>
+  <p class="nt fd">※ 効果には個人差があります。効果をお約束するものではありません。</p>
+</div></section>
+
+<section style="background:var(--sand)"><div class="sec">
+  <span class="kk fd">Instructor</span>
+  <h2 class="fd">ひとりの先生が、<br><em>最初から最後まで。</em></h2>
+  <p class="ld fd">インストラクターは、Sachiyoさん。2015年にピラティスを始め、出産後の今も続けているご自身の経験を、Instagramに記録されています。身体のつながりを、体感として伝えることを大切にされています。</p>
+  <p class="nt fd">※ ご経歴の記載は、Instagramの公開投稿をもとにしています。正式版では、ご本人の確認後に、プロフィールとして整えます。</p>
+</div></section>
+
+<section><div class="sec">
+  <span class="kk fd">Studio</span>
+  <h2 class="fd">1組貸切だから、<em>自分の身体に集中</em>できる。</h2>
+  <div class="tl fd">
+    <div><b>場所</b><span>兵庫県芦屋市親王塚町13-15 岸里ビル3階（JR芦屋駅 徒歩10分）</span></div>
+    <div><b>設備</b><span>contrology（コントロロジー）のリフォーマー。創始者ジョセフ・ピラティスの考えに近い形のリフォーマーと、ご案内されています</span></div>
+    <div><b>ご予約</b><span>予約ページから、日時を選べます</span></div>
+  </div>
+  <div class="hours fd"><div><b>Mon</b>9:30–16:30</div><div><b>Tue</b>9:30–16:30</div><div><b>Wed</b>9:30–12:00</div><div><b>Thu</b>9:30–16:30</div><div><b>Fri</b>9:30–16:30</div><div><b>Sat/Sun</b>定休日</div></div>
+  <div class="tbd fd"><b>料金・体験レッスン・キャンセルのご案内</b>は、お店のご確認をいただいてから、ここに載せます（現在のInstagramのハイライト「price」「mat」の内容を、そのまま整理して載せる予定です）。</div>
+</div></section>
+
+<section style="background:var(--sand)"><div class="sec">
+  <span class="kk fd">Instagram</span>
+  <h2 class="fd">最新の投稿は、Instagramから、そのまま。</h2>
+  <div class="ig fd"><iframe src="https://www.instagram.com/uni_studio_pilates/embed" loading="lazy" title="Instagram uni studio" scrolling="no"></iframe></div>
+  <p class="nt fd">※ 写真はコピーせず、Instagram公式の埋め込みで表示しています。載せてほしくない場合は、すぐに外します。</p>
+</div></section>
+
+<div class="band">
+  <p>足裏から、つながる。<br>まずは、予約ページから。</p>
+  <a href="https://unistudio-pilates.stores.jp/reserve/ashiya" target="_blank" rel="noopener">空き状況を見る</a>
+</div>
+</div>
+
+<footer>
+  <p>このページは、第二ビジネス研究所（明田 充弘）が、お店のInstagramと予約ページの公開情報をもとに作った<b>ホームページ見本</b>です。お店の公式ページではありません。</p>
+  <p>トップの石の積み重ねは、概念図のグラフィックです。写真は使っていません。料金・体験レッスンなどは確認できていないため載せていません。</p>
+  <p><a href="https://second-business-lab.jp/">https://second-business-lab.jp/</a></p>
+</footer>
+
+<script>
+(function(){
+  var d=document,b=d.body,intro=d.getElementById('intro'),done=false;
+  d.documentElement.classList.add('js');
+  var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  function finish(){
+    if(done)return;done=true;
+    intro.classList.add('out');
+    setTimeout(function(){b.classList.remove('lock');b.classList.add('ready')},450);
+    setTimeout(function(){intro.style.display='none'},1500);
+  }
+  if(reduce){intro.style.display='none';b.classList.remove('lock');b.classList.add('ready')}
+  else{setTimeout(finish,3400);d.getElementById('skip').addEventListener('click',finish);intro.addEventListener('click',finish)}
+  /* 石の積み重ね */
+  var T=[["足裏","身体の土台は、足裏。まず、足裏で立つ感覚から始めます。"],["脚","足裏から、すね、ももへ。つながりを、ひとつずつ、たどっていきます。"],["骨盤","骨の積み重ねの、まんなか。ここが安定すると、上の骨も、のりやすくなります。"],["背骨","身体の中に、1本、筋が通る感覚。お店が大切にしているところです。"],["肩・首","余計な力みが抜けて、肩や首が軽く感じられることを、めざします。"]];
+  var ks=[].slice.call(d.querySelectorAll('.sk')),cap=d.getElementById('cap'),cur=0,user=false,tm;
+  function set(i){cur=i;ks.forEach(function(k,n){k.setAttribute('aria-pressed',n===i?'true':'false')});cap.innerHTML='<b>'+T[i][0]+'</b>'+T[i][1]}
+  ks.forEach(function(k){k.addEventListener('click',function(){user=true;clearInterval(tm);set(+k.dataset.i)})});
+  set(0);
+  function auto(){tm=setInterval(function(){if(user){clearInterval(tm);return}set((cur+1)%5)},2600)}
+  setTimeout(auto,reduce?200:4600);
+  var io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12}):null;
+  [].slice.call(d.querySelectorAll('.fd')).forEach(function(s){io?io.observe(s):s.classList.add('in')});
+})();
+</script>
+</body>
+</html>
