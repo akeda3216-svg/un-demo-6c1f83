@@ -35,7 +35,14 @@ a{color:inherit}button{font:inherit;color:inherit;background:none;border:0;curso
 /* ===== メイン ===== */
 .demo{background:var(--umber);color:#efe6da;font-size:11.5px;line-height:1.55;text-align:center;padding:7px 12px;min-height:var(--demo)}
 .hero{position:relative;min-height:calc(100svh - var(--demo));display:grid;grid-template-columns:1fr;grid-template-rows:auto 1fr auto;padding:14px 18px 16px;gap:6px;overflow:hidden;
-  background:radial-gradient(90% 60% at 80% 35%,#f4ebdf 0,transparent 70%),var(--sand)}
+  background:var(--sand)}
+.bg{position:absolute;inset:0;z-index:0;overflow:hidden;background:var(--sand)}
+.bg video,.bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.bg video{opacity:0;transition:opacity 1.6s}.bg video.on{opacity:1}
+.bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(239,230,218,.88) 0,rgba(239,230,218,.5) 26%,rgba(239,230,218,.12) 46%,rgba(239,230,218,.5) 74%,rgba(239,230,218,.92) 100%)}
+.hero>*:not(.bg){position:relative;z-index:1}
+@media(min-width:900px){.bg::after{background:linear-gradient(90deg,rgba(239,230,218,.94) 0,rgba(239,230,218,.8) 34%,rgba(239,230,218,.15) 62%,rgba(239,230,218,.05) 100%),linear-gradient(180deg,rgba(239,230,218,.5) 0,transparent 20%,transparent 80%,rgba(239,230,218,.6) 100%)}}
+.ai{display:none;font-size:10px;color:#6a5b4e;letter-spacing:.06em}@media(min-width:900px){.ai{display:block}}
 .top{display:flex;justify-content:space-between;align-items:flex-start}
 .logo{font-size:24px;line-height:1.1;letter-spacing:.14em;font-weight:600}
 .logo small{display:block;font-family:"Zen Kaku Gothic New",sans-serif;font-size:10px;letter-spacing:.26em;color:var(--mute);margin-top:3px}
@@ -47,7 +54,7 @@ h1 em{font-style:normal;color:var(--clay2);background:linear-gradient(transparen
 .lead{font-size:13.5px;max-width:30em;color:#5b4d41;display:none}
 .stack{position:relative;margin:6px auto 0;width:min(100%,360px);display:flex;flex-direction:column-reverse;align-items:center}
 .sk{--u:clamp(54px,14.5vw,86px);position:relative;height:clamp(36px,6.4svh,58px);margin-top:calc(clamp(36px,6.4svh,58px) * -.1);border-radius:999px;background:var(--cream);color:var(--clay2);display:grid;place-items:center;
-  font-family:"Shippori Mincho",serif;font-weight:700;font-size:clamp(13px,3.6vw,17px);letter-spacing:.2em;box-shadow:0 10px 18px -10px rgba(52,40,31,.35);
+  font-family:"Shippori Mincho",serif;font-weight:700;font-size:clamp(13px,3.6vw,17px);letter-spacing:.2em;box-shadow:0 12px 22px -8px rgba(52,40,31,.5),0 0 0 1px rgba(52,40,31,.06);
   transition:background .45s,color .45s,transform .6s var(--ease),box-shadow .45s;animation:wob var(--t,6s) ease-in-out infinite alternate}
 .sk:nth-child(1){width:calc(var(--u)*3.9);border-radius:46% 46% 50% 50%/70% 70% 40% 40%}
 .sk:nth-child(2){width:calc(var(--u)*3.3);--t:5.2s}
@@ -57,7 +64,7 @@ h1 em{font-style:normal;color:var(--clay2);background:linear-gradient(transparen
 @keyframes wob{from{translate:-3px 0}to{translate:4px 0}}
 .sk[aria-pressed="true"]{background:var(--clay);color:var(--cream);transform:translateY(-6px) scale(1.04);box-shadow:0 18px 26px -10px rgba(168,87,58,.55)}
 .sk:focus-visible,.cta:focus-visible,.skip:focus-visible{outline:3px solid var(--umber);outline-offset:3px}
-.cap{min-height:5.4em;font-size:13.5px;line-height:1.8;color:#4b3e33;text-align:center;max-width:26em;margin:6px auto 0}
+.cap{background:rgba(251,246,238,.88);padding:8px 14px;border-radius:12px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);min-height:5.2em;font-size:13.5px;line-height:1.8;color:#4b3e33;text-align:center;max-width:26em;margin:6px auto 0}
 .cap b{display:block;font-family:"Shippori Mincho",serif;font-size:16px;color:var(--clay2);margin-bottom:1px}
 .bot{display:grid;gap:8px;justify-items:center}
 .chips{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
@@ -75,7 +82,7 @@ h1 em{font-style:normal;color:var(--clay2);background:linear-gradient(transparen
   .stack-wrap{grid-area:stack;display:grid;align-content:center;justify-items:center}
   .stack{width:min(100%,460px)}
   .sk{--u:clamp(70px,6.4vw,100px);height:clamp(50px,8svh,70px);font-size:19px}
-  .cap{text-align:left;margin:8px 0 0;max-width:30em}
+  .cap{text-align:left;margin:10px 0 0;max-width:30em}
   .bot{justify-items:start;margin-top:6px}.chips{justify-content:flex-start}.cta{max-width:380px}.sub{text-align:left}
 }
 
@@ -98,6 +105,7 @@ h2 em{font-style:normal;background:linear-gradient(transparent 68%,rgba(192,107,
 .tbd{margin-top:16px;border:1px dashed var(--clay);border-radius:8px;padding:14px 16px;background:#fff9f0;font-size:14px}
 .ig{display:flex;justify-content:center;margin-top:12px}
 .ig iframe{width:100%;max-width:420px;height:560px;border:1px solid rgba(52,40,31,.18);background:#fff}
+.ph{margin-top:30px;position:relative;overflow:hidden;border-radius:6px;max-width:560px}.ph img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 60%}.ph figcaption{position:absolute;left:10px;bottom:8px;right:10px;font-size:11.5px;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.7)}
 .band{background:var(--clay);color:var(--cream);padding:64px 22px;text-align:center}
 .band p{font-family:"Shippori Mincho",serif;font-size:clamp(20px,4vw,30px);line-height:1.8;font-weight:700}
 .band a{display:inline-block;margin-top:22px;background:var(--cream);color:var(--clay2);text-decoration:none;padding:15px 36px;font-weight:700;letter-spacing:.12em;border-radius:2px}
@@ -110,6 +118,7 @@ footer a{color:#efe6da}
 .ready .hero .top,.ready .hero .k,.ready .hero h1,.ready .hero .lead,.ready .hero .stack,.ready .hero .cap,.ready .hero .bot{opacity:1;transform:none;transition:opacity .9s var(--ease),transform .9s var(--ease)}
 .ready .hero .k{transition-delay:.15s}.ready .hero h1{transition-delay:.25s}.ready .hero .lead{transition-delay:.35s}.ready .hero .stack{transition-delay:.4s}.ready .hero .cap{transition-delay:.6s}.ready .hero .bot{transition-delay:.7s}
 @media(prefers-reduced-motion:reduce){#intro{display:none}.sk{animation:none}.js .fd,.js .hero *{opacity:1!important;transform:none!important;transition:none!important}}
+@media(max-height:660px) and (max-width:899px){.chips{display:none}.cap{min-height:4em;font-size:12.5px}}
 </style>
 </head>
 <body class="lock">
@@ -129,9 +138,10 @@ footer a{color:#efe6da}
   <button class="skip" id="skip" type="button">スキップ</button>
 </div>
 
-<div class="demo">これは uni studio 様向けのデモ（非公開の見本）です。お店の公開情報をもとにしています。写真は使っていません。</div>
+<div class="demo">これは uni studio 様向けのデモ（非公開の見本）です。お店の公開情報をもとにしています。映像・画像はAI生成のイメージです。</div>
 
 <header class="hero" id="hero">
+  <div class="bg" aria-hidden="true"><img id="bgp" src="assets/hero_port.jpg" alt=""><video id="bgv" muted loop playsinline preload="auto"></video></div>
   <div class="top"><div class="logo en">uni studio<small>ASHIYA · MACHINE PILATES</small></div><div class="st">JR芦屋駅 徒歩10分<br>1組貸切</div></div>
   <div class="mid">
     <p class="k">芦屋のマシンピラティス</p>
@@ -151,6 +161,7 @@ footer a{color:#efe6da}
   <div class="bot">
     <div class="chips"><span>1組貸切</span><span>contrology リフォーマー</span><span class="pc">JR芦屋駅 徒歩10分</span></div>
     <a class="cta" href="https://unistudio-pilates.stores.jp/reserve/ashiya" target="_blank" rel="noopener">空き状況を見て、予約する</a>
+    <p class="ai">※ 映像はAI生成のイメージです</p>
     <p class="sub">月火木金 9:30–16:30／水 9:30–12:00／土日定休</p>
   </div>
 </header>
@@ -162,6 +173,7 @@ footer a{color:#efe6da}
   <p class="ld fd">人の身体は、骨の積み重ねでできています。その土台が足裏です。足裏から身体のつながりを感じていくと、不要な力みが抜けて、使われていなかった筋肉が目覚めていく——お店では、このように考えて、レッスンをされています。</p>
   <p class="q fd">10回で、違いを感じ。<br>20回で、見た目が変わり。<br>30回で、身体のすべてが変わる。<br><span style="font-size:.7em;color:var(--mute)">— ジョセフ・ピラティス（予約ページより）</span></p>
   <p class="nt fd">※ 効果には個人差があります。効果をお約束するものではありません。</p>
+  <figure class="ph fd"><img src="assets/feet.jpg" alt="リフォーマーのフットバーに足裏をのせるイメージ" loading="lazy"><figcaption>足裏から始まる（AI生成のイメージ・実際の写真ではありません）</figcaption></figure>
 </div></section>
 
 <section style="background:var(--sand)"><div class="sec">
@@ -198,7 +210,7 @@ footer a{color:#efe6da}
 
 <footer>
   <p>このページは、第二ビジネス研究所（明田 充弘）が、お店のInstagramと予約ページの公開情報をもとに作った<b>ホームページ見本</b>です。お店の公式ページではありません。</p>
-  <p>トップの石の積み重ねは、概念図のグラフィックです。写真は使っていません。料金・体験レッスンなどは確認できていないため載せていません。</p>
+  <p>映像・画像は、スタジオの雰囲気をイメージして、AIで作ったもので、お店の実際の写真ではありません。お店の写真は使っていません。正式版では、お店の本物の写真・映像に差し替えます（掲載のご許可をいただいたうえで、お預かりします）。料金・体験レッスンなどは確認できていないため載せていません。</p>
   <p><a href="https://second-business-lab.jp/">https://second-business-lab.jp/</a></p>
 </footer>
 
@@ -215,6 +227,10 @@ footer a{color:#efe6da}
   }
   if(reduce){intro.style.display='none';b.classList.remove('lock');b.classList.add('ready')}
   else{setTimeout(finish,3400);d.getElementById('skip').addEventListener('click',finish);intro.addEventListener('click',finish)}
+  /* 背景映像 */
+  (function(){var v=d.getElementById('bgv'),p=d.getElementById('bgp');if(reduce)return;
+    function pick(){var land=matchMedia('(min-width:900px)').matches;var u=land?'assets/hero_land.mp4':'assets/hero_port.mp4';p.src=land?'assets/hero_land.jpg':'assets/hero_port.jpg';if(v.dataset.u===u)return;v.dataset.u=u;v.classList.remove('on');v.src=u;v.load();var pr=v.play();if(pr&&pr.catch)pr.catch(function(){})}
+    v.addEventListener('playing',function(){v.classList.add('on')});pick();matchMedia('(min-width:900px)').addEventListener&&matchMedia('(min-width:900px)').addEventListener('change',pick)})();
   /* 石の積み重ね */
   var T=[["足裏","身体の土台は、足裏。まず、足裏で立つ感覚から始めます。"],["脚","足裏から、すね、ももへ。つながりを、ひとつずつ、たどっていきます。"],["骨盤","骨の積み重ねの、まんなか。ここが安定すると、上の骨も、のりやすくなります。"],["背骨","身体の中に、1本、筋が通る感覚。お店が大切にしているところです。"],["肩・首","余計な力みが抜けて、肩や首が軽く感じられることを、めざします。"]];
   var ks=[].slice.call(d.querySelectorAll('.sk')),cap=d.getElementById('cap'),cur=0,user=false,tm;
